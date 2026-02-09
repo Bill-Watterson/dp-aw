@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Navegabilidade por Teclado</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+
+    /* Foco visível e contrastante para navegação via teclado */
+    a:focus,
+    button:focus,
+    [tabindex="0"]:focus {
+      outline: 3px solid #005fcc;
+      outline-offset: 3px;
+    }
+
+    /* Estilo visual para simular botão customizado */
+    .botao-custom {
+      display: inline-block;
+      padding: 0.75rem 1.2rem;
+      background-color: #e0e0e0;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Link nativo (recebe foco automaticamente) -->
+  <a href="#">Link inicial</a>
+
+  <br><br>
+
+  <!-- ERRO IDENTIFICADO: elemento interativo que não recebe foco -->
+  <div class="botao-custom" tabindex="-1">
+    Botão sem foco (erro)
+  </div>
+
+  <br><br>
+
+  <!-- CORREÇÃO APLICADA: foco habilitado corretamente -->
+  <div class="botao-custom" tabindex="0">
+    Botão com foco corrigido
+  </div>
+
+  <br><br>
+
+  <!-- Botões nativos com ordem de foco lógica -->
+  <button>Confirmar</button>
+  <button>Cancelar</button>
+
+</body>
+</html>
